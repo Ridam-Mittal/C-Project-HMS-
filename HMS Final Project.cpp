@@ -98,119 +98,7 @@ void Hotel::roomcat_data(){
     }
     cout<<endl;
 }
-//---------------------------------------------------------------------------------------------------------------------------
-/*void Hotel::insert() {
-    while (true) {
-        Node* newnode = new Node;
-        RNode* r1 = Rhead;
 
-        cout << "ENTER CUSTOMER DETAILS:" << endl;
-        cout << "Enter Guest Name: ";
-        cin.ignore();
-        getline(cin, newnode->name);
-
-        cout << "Enter Guest Address: ";
-        getline(cin, newnode->address);
-
-        cout << "Enter Guest Contact Number: ";
-        cin >> newnode->pno;
-
-        int x, y, z;
-        string tempDate;
-        while (true) {
-            cout << "Enter Date of Check-In (DD MM YYYY): ";
-            cin >> tempDate;
-
-            if (sscanf(tempDate.c_str(), "%d %d %d", &x, &y, &z) == 3 && (x > 0 && x <= 31) && (y > 0 && y < 13) && (z >= 2023)) {
-                newnode->checkindate[0] = x;
-                newnode->checkindate[1] = y;
-                newnode->checkindate[2] = z;
-                break;
-            } else {
-                cout << "INVALID DATE ENTERED!" << endl;
-                cin.clear();
-            }
-        }
-
-        cout << "Enter Number of Days of Stay: ";
-        cin >> newnode->days;*/
-/*		    cout << "ENTER ROOM DETAILS:" << endl;
-   bool validRoomType = false;
-        string rt;
-
-        // Display room number ranges for each room type
-        displayRoomRanges();
-
-        while (!validRoomType) {
-            cout << "Select Room Type from the above list: ";
-            cin.ignore();
-            getline(cin, rt);
-
-            RNode* tempRNode = Rhead;
-            while (tempRNode != NULL) {
-                if (tempRNode->roomtype == rt) {
-                    cout << "Room Numbers for " << rt << " are from " << tempRNode->minRoomNo << " to " << tempRNode->maxRoomNo << endl;
-                    tempRNode->filled++; // Increment the room count
-                    validRoomType = true;
-                    newnode->roomtype = rt;
-                    newnode->roomno = tempRNode->minRoomNo; // Initializing room number
-                    break;
-                }
-                tempRNode = tempRNode->next;
-            }
-
-            if (!validRoomType) {
-                cout << "INVALID ROOM TYPE ENTERED! Please select from the available room types." << endl;
-            }
-        }
-
-        // Room number allotment logic
-        bool roomOccupied = false;
-        int rn;
-        while (true) {
-            cout << "Allot Room Number: ";
-            cin >> rn;
-            roomOccupied = false;
-
-            // Validate the room number within the selected room type range
-            RNode* tempRNode = Rhead;
-            while (tempRNode != NULL) {
-                if (tempRNode->roomtype == newnode->roomtype) {
-                    if (rn < tempRNode->minRoomNo || rn > tempRNode->maxRoomNo) {
-                        roomOccupied = true;
-                        cout << "ROOM NUMBER NOT AVAILABLE FOR SELECTED ROOM TYPE. TRY AGAIN..." << endl;
-                        break;
-                    }
-                }
-                tempRNode = tempRNode->next;
-            }
-
-            if (!roomOccupied) {
-                newnode->roomno = rn;
-                cout << "ROOM NUMBER " << rn << " ALLOTTED SUCCESSFULLY." << endl;
-                break;
-            }
-        }
-
-        // Insert new node into the list
-        if (head == NULL) {
-            head = newnode;
-        } else {
-            Node* temp = head;
-            while (temp->next != NULL) {
-                temp = temp->next;
-            }
-            temp->next = newnode;
-        }
-
-        cout << endl << "PRESS 1 FOR ANOTHER CHECK-IN OR ANY OTHER KEY TO RETURN TO MAIN MENU: ";
-        int k;
-        cin >> k;
-        if (k != 1) {
-            break;
-        }
-    }
-}*/
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 void Hotel::insert() {
     while (true) {
@@ -502,9 +390,9 @@ void Hotel::searchbycategory() {
         if (we->roomtype == h) {
             count++;
           setColor(8);  
-          cout << "_______________________________________________________________________________________________________________________________" << endl;
+          cout << "_______________________________________________________________________________________________________________________________________________________" << endl;
 				cout << "ROOM NO.\tGUEST NAME\tROOM TYPE\tCONTACT NUMBER\tCHECK-IN-DATE\tNO-OF-DAYS-OF-STAY\tADDRESS" << endl;
-				cout << "_______________________________________________________________________________________________________________________________" << endl;
+				cout << "__________________________________________________________________________________________________________________________________" << endl;
 
 				cout << we->roomno << "\t\t" << we->name << "\t\t" << we->roomtype << "\t\t" << we->pno << "\t\t"
     			 << we->checkindate[0] << "-" << we->checkindate[1] << "-" << we->checkindate[2] << "\t\t"
@@ -957,7 +845,7 @@ while(true){
 				setColor(7);
 				cout << "Task 5 --> ";
 				setColor(6);
-				cout << "SORT THE DATABASE BY DAYS OF STAY IN A ROOM:" << endl;
+				cout << "SORT THE DATABASE :" << endl;
 
 				setColor(7);
 				cout << "Task 6 --> ";
@@ -1052,9 +940,9 @@ while(true){
 		a.update();
 		break;
 	case 7:
-	    cout<<"------------------------------------------------------------------------------------"<<endl;
+	    cout<<"--------------------------------------------------------------------------------------------"<<endl;
 	    a.roomcat_data();
-	    cout<<"------------------------------------------------------------------------------------"<<endl;
+	    cout<<"--------------------------------------------------------------------------------------------"<<endl;
 	    break;
 	case 8:
 		restaurant();
